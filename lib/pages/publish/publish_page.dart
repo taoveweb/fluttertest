@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -6,6 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:photofilters/photofilters.dart';
 import 'package:fluttertest/common/widgets/flutter_photo_filter.dart';
 import 'package:fluttertest/common/widgets/preset_filters.dart';
+import 'package:fluttertest/pages/home/home_controller.dart';
+import 'package:get/get.dart';
 import 'package:image/image.dart' as imageLib;
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
@@ -13,6 +16,7 @@ import 'package:photofilters/filters/filters.dart';
 
 class PublishPage extends StatelessWidget {
   PublishPage({Key? key}) : super(key: key);
+  HomeController controller = HomeController();
   late String fileName;
   List<Filter> filters = presetFiltersList;
   final picker = ImagePicker();
@@ -53,9 +57,16 @@ class PublishPage extends StatelessWidget {
       );
 
       if (imagefile != null && imagefile.containsKey('image_filtered')) {
+        var path = imagefile['image_filtered'].path;
         // setState(() {
         //   imageFile = imagefile['image_filtered'];
         // });
+        final form = FormData({
+          'file': MultipartFile(imagefile['image_filtered'].path,
+              filename: 'avatar.png'),
+          // 'otherFile': MultipartFile(image, filename: 'cover.png'),
+        });
+        await controller.upload(form);
         print(imageFile.path);
       }
     }

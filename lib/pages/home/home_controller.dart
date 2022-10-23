@@ -41,4 +41,18 @@ class HomeController extends GetxController {
       }
     }
   }
+
+  Future upload(data) async {
+    var ret = await api.upload(data);
+    if (ret.hasError) {
+    } else {
+      if (ret.body?.code == 0) {
+        //list.value = ret.body!;
+        update();
+        // banner.value = ret.body!;
+      } else {
+        // ret.body?.msg ?? showToast(ret.body?.msg ?? '');
+      }
+    }
+  }
 }

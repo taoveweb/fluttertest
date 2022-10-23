@@ -12,4 +12,8 @@ class HomeProvider extends BaseConnect {
       decoder: (obj) => ListModel.fromJson(obj),
     );
   }
+
+  Future<Response<BaseModel>> upload(FormData data) {
+    return post('v1/upload', data);
+  }
 }

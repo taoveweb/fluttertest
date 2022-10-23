@@ -10,7 +10,8 @@ class Server {
 
   ///生产
   //// prod-scope-start
-  static const String serverUrl = "https://6e21-14-199-156-3.jp.ngrok.io/";
+  //static const String serverUrl = "https://6e21-14-199-156-3.jp.ngrok.io/";
+  static const String serverUrl = "http://localhost:3000/";
 
   //// prod-scope-end
 
