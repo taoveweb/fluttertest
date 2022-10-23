@@ -10,9 +10,8 @@ class Server {
 
   ///生产
   //// prod-scope-start
-  static const String serverUrl = "https://api.enjoyfujitech.com/";
-  static const String invite =
-      'https://invite.enjoyfujitech.com/invite/index.html#/invite';
+  static const String serverUrl = "https://6e21-14-199-156-3.jp.ngrok.io/";
+
   //// prod-scope-end
 
 //https://jvf9eoi39e.execute-api.us-west-2.amazonaws.com/

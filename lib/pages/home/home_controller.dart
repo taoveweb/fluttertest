@@ -1,4 +1,5 @@
 import 'package:fluttertest/pages/home/home_provider.dart';
+import 'package:fluttertest/pages/home/model/list_model.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -7,6 +8,7 @@ class HomeController extends GetxController {
 
   var isShopCar = false.obs;
   var inviteUrl = '';
+  var list = ListModel().obs;
 
   @override
   void onInit() {
@@ -22,5 +24,21 @@ class HomeController extends GetxController {
     // version.onResumed();
   }
 
-  Future init() async {}
+  Future init() async {
+    getHomeList();
+  }
+
+  Future getHomeList() async {
+    var ret = await api.homelist();
+    if (ret.hasError) {
+    } else {
+      if (ret.body?.code == 0) {
+        list.value = ret.body!;
+        update();
+        // banner.value = ret.body!;
+      } else {
+        // ret.body?.msg ?? showToast(ret.body?.msg ?? '');
+      }
+    }
+  }
 }
