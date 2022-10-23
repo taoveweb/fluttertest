@@ -257,15 +257,7 @@ class _fluttertestPhotoFilterSelectorState
         builder: ((controller) {
           return FloatingDraggableWidget(
             floatingWidget: GestureDetector(
-              onTap: () {
-                controller.floatHeight =
-                    globalKey.currentContext?.size?.height ?? 1.0;
-                controller.floatWight =
-                    globalKey.currentContext?.size?.width ?? 1.0;
-
-                controller.update();
-                print('height is ${globalKey.currentContext?.size}');
-              },
+              onTap: () {},
               child: Text(
                 key: globalKey,
                 controller.text.value,
@@ -274,20 +266,14 @@ class _fluttertestPhotoFilterSelectorState
             ),
             floatingWidgetHeight: controller.floatHeight,
             floatingWidgetWidth: controller.floatWight,
-            dx: 42,
-            dy: 300,
-            deleteWidgetDecoration: const BoxDecoration(
-              // gradient: LinearGradient(
-              //   colors: [Colors.white12, Colors.grey],
-              //   begin: Alignment.topCenter,
-              //   end: Alignment.bottomCenter,
-              //   stops: [.0, 1],
-              // ),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(50),
-                topRight: Radius.circular(50),
-              ),
-            ),
+            dx: controller.dx.value,
+            dy: controller.dy.value,
+            // deleteWidgetDecoration: const BoxDecoration(
+            //   borderRadius: BorderRadius.only(
+            //     topLeft: Radius.circular(50),
+            //     topRight: Radius.circular(50),
+            //   ),
+            // ),
             deleteWidgetPadding: EdgeInsets.only(bottom: 185.w),
             deleteWidget: Container(
               decoration: BoxDecoration(

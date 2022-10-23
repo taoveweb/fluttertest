@@ -7,6 +7,8 @@ class PublishController extends GetxController {
   var show = false.obs;
   var isShopCar = false.obs;
   var isRemoved = false.obs;
+  var dy = (300.0).obs;
+  var dx = (32.0).obs;
   var floatHeight = 1.0;
   var floatWight = 1.0;
   var text = ''.obs;

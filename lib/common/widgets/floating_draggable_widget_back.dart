@@ -195,37 +195,31 @@ class _FloatingDraggableWidgetState extends State<FloatingDraggableWidget>
                         children: [
                           widget.mainScreenWidget,
                           if (hasDeleteWidget)
-                            Positioned(
-                              top: 0.5.h,
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: AnimatedOpacity(
-                                opacity: isDragging ? 1.0 : 0.0,
-                                duration: Duration(
-                                  milliseconds:
-                                      widget.hasDeleteWidgetAnimationDuration,
-                                ),
-                                child: Container(
-                                  padding: widget.deleteWidgetPadding,
-                                  decoration: widget.deleteWidgetDecoration,
-                                  alignment: widget.deleteWidgetAlignment,
-                                  child: AnimatedSize(
-                                    curve: widget.deleteWidgetAnimationCurve,
-                                    duration: Duration(
-                                      milliseconds:
-                                          widget.deleteWidgetAnimationDuration,
-                                    ),
-                                    child: SizedBox(
-                                      key: containerKey1,
-                                      height: isColliding
-                                          ? widget.isCollidingDeleteWidgetHeight
-                                          : widget.deleteWidgetWidth,
-                                      width: isColliding
-                                          ? widget.isCollidingDeleteWidgetWidth
-                                          : widget.deleteWidgetWidth,
-                                      child: widget.deleteWidget,
-                                    ),
+                            AnimatedOpacity(
+                              opacity: isDragging ? 1.0 : 0.0,
+                              duration: Duration(
+                                milliseconds:
+                                    widget.hasDeleteWidgetAnimationDuration,
+                              ),
+                              child: Container(
+                                padding: widget.deleteWidgetPadding,
+                                decoration: widget.deleteWidgetDecoration,
+                                alignment: widget.deleteWidgetAlignment,
+                                child: AnimatedSize(
+                                  curve: widget.deleteWidgetAnimationCurve,
+                                  duration: Duration(
+                                    milliseconds:
+                                        widget.deleteWidgetAnimationDuration,
+                                  ),
+                                  child: SizedBox(
+                                    key: containerKey1,
+                                    height: isColliding
+                                        ? widget.isCollidingDeleteWidgetHeight
+                                        : widget.deleteWidgetWidth,
+                                    width: isColliding
+                                        ? widget.isCollidingDeleteWidgetWidth
+                                        : widget.deleteWidgetWidth,
+                                    child: widget.deleteWidget,
                                   ),
                                 ),
                               ),
