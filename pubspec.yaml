@@ -45,6 +45,9 @@ dependencies:
   loading_animation_widget: ^1.2.0+3
   image_picker: ^0.8.6
   photofilters: ^3.0.1
+  draggable_fab: ^0.1.4
+  draggable_widget: ^2.0.0
+  floating_draggable_widget: ^2.1.2
 
 dev_dependencies:
   flutter_test:
